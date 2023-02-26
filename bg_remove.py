@@ -4,13 +4,13 @@ from PIL import Image
 from io import BytesIO
 import base64
 
-st.set_page_config(layout="wide", page_title="Image Background Remover")
+st.set_page_config(layout="wide", page_title="Eliminador de fondo de imagen", page_icon=":dog:")
 
-st.write("## Remove background from your image")
+st.write("## Borrar el fondo de la Imagen 3")
 st.write(
-    ":dog: Try uploading an image to watch the background magically removed. Full quality images can be downloaded from the sidebar. This code is open source and available [here](https://github.com/tyler-simons/BackgroundRemoval) on GitHub. Special thanks to the [rembg library](https://github.com/danielgatis/rembg) :grin:"
+    ":dog: Intenta subir una imagen para ver cómo se elimina mágicamente el fondo. Las imágenes de alta calidad se pueden descargar desde el panel lateral."
 )
-st.sidebar.write("## Upload and download :gear:")
+st.sidebar.write("## Subir imagen para descargar :gear:")
 
 
 # Download the fixed image
@@ -27,16 +27,16 @@ def fix_image(upload):
     col1.image(image)
 
     fixed = remove(image)
-    col2.write("Fixed Image :wrench:")
+    col2.write("Imagen ajustada :wrench:")
     col2.image(fixed)
     st.sidebar.markdown("\n")
-    st.sidebar.download_button("Download fixed image", convert_image(fixed), "fixed.png", "image/png")
+    st.sidebar.download_button("Descargar imagen ajustada", convert_image(fixed), "fixed.png", "image/png")
 
 
 col1, col2 = st.columns(2)
-my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+my_upload = st.sidebar.file_uploader("Subir una imagen", type=["png", "jpg", "jpeg"])
 
 if my_upload is not None:
     fix_image(upload=my_upload)
 else:
-    fix_image("./zebra.jpg")
+    fix_image("./mini-yoda.jpg")
