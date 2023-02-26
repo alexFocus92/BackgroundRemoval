@@ -6,7 +6,7 @@ import base64
 
 st.set_page_config(layout="wide", page_title="Eliminador de fondo de imagen", page_icon=":dog:")
 
-st.write("## Borrar el fondo de la Imagen 3")
+st.write("## Borrar el fondo de la Imagen")
 st.write(
     ":dog: Intenta subir una imagen para ver cómo se elimina mágicamente el fondo. Las imágenes de alta calidad se pueden descargar desde el panel lateral."
 )
