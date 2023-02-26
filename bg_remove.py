@@ -23,7 +23,7 @@ def convert_image(img):
 
 def fix_image(upload):
     image = Image.open(upload)
-    col1.write("Original Image :camera:")
+    col1.write("Imagen original :camera:")
     col1.image(image)
 
     fixed = remove(image)
